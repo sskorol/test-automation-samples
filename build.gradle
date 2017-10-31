@@ -1,4 +1,4 @@
-group 'io.github.io.github.sskorol'
+group 'com.travel.pay'
 version '0.0.1'
 
 apply plugin: 'java'
@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    compile("one.util:streamex:0.6.5",
+    compile('one.util:streamex:0.6.5',
             'io.vavr:vavr:0.9.1',
             'org.apache.commons:commons-lang3:3.6')
 }
@@ -21,7 +21,7 @@ task wrapper(type: Wrapper) {
 
 jar {
     manifest {
-        attributes("Main-Class": 'io.github.sskorol.Main')
+        attributes("Main-Class": 'com.travel.pay.Main')
     }
 
     from {

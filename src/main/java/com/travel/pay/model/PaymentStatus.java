@@ -1,4 +1,4 @@
-package io.github.sskorol.model;
+package com.travel.pay.model;
 
 public enum PaymentStatus {
     CHARGED,
