@@ -1,0 +1,30 @@
+group 'io.github.io.github.sskorol'
+version '0.0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("one.util:streamex:0.6.5",
+            'io.vavr:vavr:0.9.1',
+            'org.apache.commons:commons-lang3:3.6')
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion '4.2.1'
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": 'io.github.sskorol.Main')
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
