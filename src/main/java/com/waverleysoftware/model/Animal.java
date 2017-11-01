@@ -2,20 +2,20 @@ package com.waverleysoftware.model;
 
 import com.waverleysoftware.behaviour.Breed;
 import com.waverleysoftware.behaviour.Eatable;
-import java.util.UUID;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public abstract class Animal {
 
+    protected HomeType homeType;
     private String name;
     private GenderType gender;
-    protected HomeType homeType;
     private Breed breed;
     private ArrayList<Eatable> eatableList;
     private UUID id;
 
-    public Animal(String name, GenderType gender, Breed breed){
+    public Animal(String name, GenderType gender, Breed breed) {
         this.name = name;
         this.gender = gender;
         this.breed = breed;
@@ -23,27 +23,27 @@ public abstract class Animal {
         this.eatableList = new ArrayList<Eatable>();
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public void setName(String newName){
+    public void setName(String newName) {
         this.name = newName;
     }
 
-    public GenderType getGender(){
+    public GenderType getGender() {
         return this.gender;
     }
 
-    public void setGender(GenderType newGender){
+    public void setGender(GenderType newGender) {
         this.gender = newGender;
     }
 
-    public HomeType getHomeType(){
+    public HomeType getHomeType() {
         return this.homeType;
     }
 
-    public void setHomeType(HomeType newHomeType){
+    public void setHomeType(HomeType newHomeType) {
         this.homeType = newHomeType;
     }
 
@@ -64,7 +64,7 @@ public abstract class Animal {
         return "name='" + name + '\'' +
                 ", gender=" + gender +
                 ", homeType=" + homeType +
-                ",breed = "  + breed +
+                ",breed = " + breed +
                 ", eatableList=" + eatableList +
                 ",id = " + id;
     }

@@ -3,11 +3,11 @@ package com.waverleysoftware.service.implementation;
 import com.waverleysoftware.model.Animal;
 import com.waverleysoftware.service.provider.IAnimalService;
 import com.waverleysoftware.storage.AnimalStorage;
-import one.util.streamex.*;
+import one.util.streamex.StreamEx;
 
 import java.util.List;
-import java.util.UUID;
 import java.util.Optional;
+import java.util.UUID;
 
 public class AnimalService implements IAnimalService {
 
@@ -34,7 +34,7 @@ public class AnimalService implements IAnimalService {
     @Override
     public Animal getAnimalByID(UUID uuid) {
         Optional<Animal> opt = StreamEx.of(animals)
-                .findFirst(animal ->animal.getId().equals(uuid));
+                .findFirst(animal -> animal.getId().equals(uuid));
         return opt.isPresent() ? opt.get() : null;
     }
 
@@ -49,7 +49,7 @@ public class AnimalService implements IAnimalService {
             }
         }
 
-        if(result != null) {
+        if (result != null) {
             animals.remove(result);
             return result;
         } else {

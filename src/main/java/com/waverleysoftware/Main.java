@@ -2,13 +2,15 @@ package com.waverleysoftware;
 
 import com.waverleysoftware.facade.ShelterFacade;
 import com.waverleysoftware.model.Animal;
+
 import java.util.Scanner;
+
 import static io.vavr.API.*;
 import static org.apache.commons.lang3.math.NumberUtils.toInt;
 
 public class Main {
 
-    private static void dogPicture(){
+    private static void dogPicture() {
         System.out.println("\n" +
                 "     /^-----^\\\n" +
                 "     V  o o  V\n" +
@@ -53,13 +55,13 @@ public class Main {
                             System.out.println("Please enter UUID");
                             String userInput = console.nextLine();
                             Animal choosenAnimal = facade.getAnimalById(userInput);
-                            if(choosenAnimal == null){
+                            if (choosenAnimal == null) {
                                 System.out.println("No such animal in our shelter");
                             } else {
                                 System.out.println(choosenAnimal);
                             }
                         })),
-                    
+
                         Case($(4), () -> run(() -> {
                             System.out.println("Please enter UUID");
                             String uuidStr = console.nextLine();
@@ -71,7 +73,7 @@ public class Main {
                             int age = toInt(console.nextLine());
                             facade.pickUpAnimal(uuidStr, firstName, lastName, age);
                         })),
-                    
+
                         Case($(5), () -> run(() -> System.exit(0)))
                 );
             }
