@@ -1,29 +1,29 @@
-group 'io.github.io.github.sskorol'
-version '0.0.1'
+group 'gradle project'
+version '1.0.1'
 
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+project.ext {
+    mainClassName = 'com.company.PreviousProject.Main'
+}
+
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    compile("one.util:streamex:0.6.5",
-            'io.vavr:vavr:0.9.1',
-            'org.apache.commons:commons-lang3:3.6')
+    compile('one.util:streamex:0.6.5',
+            'io.vavr:vavr:0.9.1')
 }
-
 task wrapper(type: Wrapper) {
     gradleVersion '4.2.1'
 }
-
 jar {
     manifest {
-        attributes("Main-Class": 'io.github.sskorol.Main')
+        attributes("Main-Class": "${mainClassName}")
     }
-
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
