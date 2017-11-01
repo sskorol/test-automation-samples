@@ -36,5 +36,6 @@ public class UserSettings {
     }
 
     public void addToFavourite(Book book) {
+
     }
 }
