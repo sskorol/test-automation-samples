@@ -36,11 +36,5 @@ public class UserSettings {
     }
 
     public void addToFavourite(Book book) {
-//        this.favouriteBooks.add(book);
-
-//        boolean isAppear = false;
-
-
-//        .filter(book-> book.getCategory().equals(category))
     }
 }
