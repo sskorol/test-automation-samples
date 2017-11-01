@@ -4,7 +4,7 @@ Project build with gradle.
 Simple console app that give you possibility to simulate 
 behaviour of real animal shelter. 
 
-I've used facade pattern for that project 
+Used pattern: facade
 
 Used libs: 
 - streamEx
