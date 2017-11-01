@@ -11,7 +11,6 @@ public abstract class Book {
 
     public Book(int id, String title, String author, int numberOfPages, Category language, LanguageType category, BookType bookType) {
         this.language = language;
-        // this.id = UUID.randomUUID().toString();
         this.id = id;
         this.title = title;
         this.author = author;

@@ -51,8 +51,11 @@ public class Main {
                             Try.run(() -> facade.searchByCriteria(consolelog.nextLine())).onFailure(System.out::println);
                         })),
                         Case($(5), () -> run(() -> facade.showFavouriteBooks())),
+                        Case($(6), () -> run(() -> System.exit(0))),
                         Case($(7), () -> run(() -> facade.addToFavourite())),
-                        Case($(6), () -> run(() -> System.exit(0))));
+                        Case($(), () -> run(() -> System.out.println("There is no command found matching your input")))
+                );
+
 
 
             }

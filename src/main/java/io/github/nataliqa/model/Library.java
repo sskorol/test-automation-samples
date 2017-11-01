@@ -14,13 +14,10 @@ public class Library {
 
     private List<Book> library;
 
-
     public Library() {
-
         this.library = asList( new eBook(001,"Java for dummies", "Java author", 590, IT, English, EBOOK, "https://archive.org/stream/williamcromptonr00cromiala?ref=ol#page/n3/mode/2up"),
         new PrintableBook(002,"Henry IV, Part Two (Henry IV, Part II)", "William Shakespeare", 320, ADVENTURE, Russian, PHYSICAL_BOOK));
     }
-
 
     public List<Book> getLibrary() {
         return library;
