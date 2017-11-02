@@ -1,9 +1,13 @@
-group 'io.github.io.github.sskorol'
+group 'com.cinema'
 version '0.0.1'
 
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
+
+project.ext{
+    mainClassName = 'com.cinema.Main'
+}
 
 repositories {
     jcenter()
@@ -15,16 +19,15 @@ dependencies {
             'org.apache.commons:commons-lang3:3.6')
 }
 
-task wrapper(type: Wrapper) {
+task wrapper(type: Wrapper){
     gradleVersion '4.2.1'
 }
 
 jar {
     manifest {
-        attributes("Main-Class": 'io.github.sskorol.Main')
+        attributes("Main-Class": "${mainClassName}")
     }
-
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it)}
     }
 }
