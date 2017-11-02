@@ -74,7 +74,7 @@ public class Main {
                             facade.pickUpAnimal(uuidStr, firstName, lastName, age);
                         })),
 
-                        Case($(5), () -> run(() -> System.exit(0)))
+                        Case($(), () -> run(() -> System.exit(0)))
                 );
             }
         }
