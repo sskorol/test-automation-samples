@@ -5,27 +5,27 @@ import java.util.function.Function;
 public class Employee {
     private final int id;
     private static int count = 1;
-    private final String firstname;
-    private final String lastname;
+    private final String firstName;
+    private final String lastName;
     private final CompanyDept dept;
-    private final double salaryrate;
-    private final double hourquant;
-    private final double totalsalary;
+    private final double salaryRate;
+    private final double hourQuantity;
+    private final double totalSalary;
     private final boolean pensioner;
 
-    public Employee(String firstname, String lastname, CompanyDept dept, double salaryrate, double hourquant) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Employee(String firstName, String lastName, CompanyDept dept, double salaryRate, double hourQuantity) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.dept = dept;
-        this.salaryrate = salaryrate;
-        this.hourquant = hourquant;
-        this.totalsalary = salaryrate * hourquant;
+        this.salaryRate = salaryRate;
+        this.hourQuantity = hourQuantity;
+        this.totalSalary = salaryRate * hourQuantity;
         this.pensioner = false;
         id = count++;
     }
 
     public double getTaxValues(Function<Double, Double> taxCalculator) {
-        return taxCalculator.apply(totalsalary);
+        return taxCalculator.apply(totalSalary);
     }
 
     public boolean ispensioner() {
@@ -33,15 +33,15 @@ public class Employee {
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public double getTotsal() {
-        return totalsalary;
+        return totalSalary;
     }
 
     public CompanyDept getDept() {
@@ -52,11 +52,11 @@ public class Employee {
     public String toString() {
         return "Employee: " +
                 "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
+                ", firstname='" + firstName + '\'' +
+                ", lastname='" + lastName + '\'' +
                 ", dept=" + dept +
-                ", salrate=" + salaryrate +
-                ", hourquant=" + hourquant +
-                ", totsal=" + totalsalary + "\n";
+                ", salrate=" + salaryRate +
+                ", hourquant=" + hourQuantity +
+                ", totsal=" + totalSalary + "\n";
     }
 }
